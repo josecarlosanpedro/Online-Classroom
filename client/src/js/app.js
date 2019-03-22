@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Layout } from 'antd';
 import { render } from 'react-dom';
 import _ from 'lodash';
 import socket from './socket';
@@ -7,6 +8,9 @@ import MainWindow from './MainWindow';
 import CallWindow from './CallWindow';
 import CallModal from './CallModal';
 
+const {
+  Header, Footer, Sider, Content,
+} = Layout;
 class App extends Component {
   constructor(props) {
     super(props);
@@ -68,26 +72,42 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div >
-        <MainWindow
-          clientId={this.state.clientId}
-          startCall={this.startCallHandler}
-        />
-        <CallWindow
-          status={this.state.callWindow}
-          localSrc={this.state.localSrc}
-          peerSrc={this.state.peerSrc}
-          config={this.config}
-          mediaDevice={this.pc.mediaDevice}
-          endCall={this.endCallHandler}
-        />
-        <CallModal
-          status={this.state.callModal}
-          startCall={this.startCallHandler}
-          rejectCall={this.rejectCallHandler}
-          callFrom={this.state.callFrom}
-        />
+            <Layout>
+              <Sider>
+                 <MainWindow
+                clientId={this.state.clientId}
+                startCall={this.startCallHandler}
+                />
+                 <CallWindow
+                  status={this.state.callWindow}
+                  localSrc={this.state.localSrc}
+                  peerSrc={this.state.peerSrc}
+                  config={this.config}
+                  mediaDevice={this.pc.mediaDevice}
+                  endCall={this.endCallHandler}
+                />
+               
+                <CallModal
+                  status={this.state.callModal}
+                  startCall={this.startCallHandler}
+                  rejectCall={this.rejectCallHandler}
+                  callFrom={this.state.callFrom}
+                />
+               
+               
+              </Sider>
+              {/* <Layout>
+                <Header>Header</Header>
+                <Content>Content</Content>
+                <Footer>Footer</Footer>
+              </Layout> */}
+            </Layout>
+ 
+          
+      
       </div >
     );
   }

@@ -1,54 +1,56 @@
 .call-window {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	opacity: 0;
-	z-index: -1;
-	@include transition(opacity 0.5s);
-	@include bg-gradient(top, #074055 0%, #030D10 100%);
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// width: 100vw;
+	// height: 100vh;
+	// opacity: 0;
+	// z-index: -1;
+	// @include transition(opacity 0.5s);
+	// @include bg-gradient(top, #074055 0%, #030D10 100%);
 	
-	&.active {
-		opacity: 1;
-		z-index: auto;
+	// &.active {
+	// 	opacity: 1;
+	// 	z-index: auto;
 		
-		.video-control {
-			z-index: auto;
-			@include animation(in-fadeout 3s ease);
-		}
-	}
+	// 	.video-control {
+	// 		z-index: auto;
+	// 		@include animation(in-fadeout 3s ease);
+	// 	}
+	// }
 	
-	.video-control {
-		position: absolute;
-		bottom: 20px;
-		height: 72px;
-		width: 100%;
-		text-align: center;
-		opacity: 0;
-		z-index: -1;
-		@include transition(opacity 0.5s);
+	// .video-control {
+	// 	position: absolute;
+	// 	bottom: 20px;
+	// 	height: 72px;
+	// 	width: 100%;
+	// 	text-align: center;
+	// 	opacity: 0;
+	// 	z-index: -1;
+	// 	@include transition(opacity 0.5s);
 		
 		
-		&:hover {
-			opacity: 1;
-		}
-	}
+	// 	&:hover {
+	// 		opacity: 1;
+	// 	}
+	// }
 	
-	video {
-		position: absolute;
-	}
+	// video {
+	// 	position: absolute;
+	// }
 	
 	#localVideo {
 		bottom: 0;
 		right: 0;
-		width: 20%;
-		height: 20%;
+		width: 250px;
+		// width: 20%;
+		// height: 20%;
 	}
 	
 	#peerVideo {
-		width: 100%;
-		height: 100%;
+		width: 250px;
+		// width: 100%;
+		// height: 100%;
 	}
 }
 
